@@ -1,0 +1,2 @@
+class Datosper < ApplicationRecord
+end

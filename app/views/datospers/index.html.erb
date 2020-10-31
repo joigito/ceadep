@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Datospers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Docum</th>
+      <th>Apellido</th>
+      <th>Nombres</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @datospers.each do |datosper| %>
+      <tr>
+        <td><%= datosper.docum %></td>
+        <td><%= datosper.apellido %></td>
+        <td><%= datosper.nombres %></td>
+        <td><%= link_to 'Show', datosper %></td>
+        <td><%= link_to 'Edit', edit_datosper_path(datosper) %></td>
+        <td><%= link_to 'Destroy', datosper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Datosper', new_datosper_path %>
