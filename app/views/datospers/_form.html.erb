@@ -1,32 +1,21 @@
-<%= form_with(model: datosper, local: true) do |form| %>
-  <% if datosper.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(datosper.errors.count, "error") %> prohibited this datosper from being saved:</h2>
+<%= simple_form_for(@datosper) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-      <ul>
-        <% datosper.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="form-inputs">
+    <%= f.input :docum, label:'Documento' %>
+    <%= f.input :apellido, label:'Apellido' %>
+    <%= f.input :nombres, label:'Nombres' %>
+   
 
-  <div class="field">
-    <%= form.label :docum %>
-    <%= form.number_field :docum %>
   </div>
 
-  <div class="field">
-    <%= form.label :apellido %>
-    <%= form.text_area :apellido %>
-  </div>
-
-  <div class="field">
-    <%= form.label :nombres %>
-    <%= form.text_area :nombres %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-actions">
+    <%= f.button :submit,label:'Enviar' %>
   </div>
 <% end %>
+
+
+
+
+

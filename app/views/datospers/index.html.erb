@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Datos Personaless</h1>
+<h1>Datos Personales</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Docum</th>
+      <th>Documento</th>
       <th>Apellido</th>
       <th>Nombres</th>
       <th colspan="3"></th>
@@ -18,9 +18,9 @@
         <td><%= datosper.docum %></td>
         <td><%= datosper.apellido %></td>
         <td><%= datosper.nombres %></td>
-        <td><%= link_to 'Show', datosper %></td>
-        <td><%= link_to 'Edit', edit_datosper_path(datosper) %></td>
-        <td><%= link_to 'Destroy', datosper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', datosper %></td>
+        <td><%= link_to 'Modificar', edit_datosper_path(datosper) %></td>
+        <td><%= link_to 'Eliminar', datosper, method: :delete, data: { confirm: 'Confirma?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Datosper', new_datosper_path %>
+<%= link_to 'Nuevo Aspirante', new_datosper_path %>
