@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  datosper: one
+  titulo: 9.99
+  antig_tit: 9.99
+  antig_doc: 9.99
+  concepto: 9.99
+  prom_tit: 9.99
+  public: 9.99
+  becas_otros: 9.99
+  concursos: 9.99
+  antec_doc: 9.99
+  red_fed: 9.99
+
+two:
+  datosper: two
+  titulo: 9.99
+  antig_tit: 9.99
+  antig_doc: 9.99
+  concepto: 9.99
+  prom_tit: 9.99
+  public: 9.99
+  becas_otros: 9.99
+  concursos: 9.99
+  antec_doc: 9.99
+  red_fed: 9.99

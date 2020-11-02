@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Puntajes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Datosper</th>
+      <th>Titulo</th>
+      <th>Antig tit</th>
+      <th>Antig doc</th>
+      <th>Concepto</th>
+      <th>Prom tit</th>
+      <th>Public</th>
+      <th>Becas otros</th>
+      <th>Concursos</th>
+      <th>Antec doc</th>
+      <th>Red fed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @puntajes.each do |puntaje| %>
+      <tr>
+        <td><%= puntaje.datosper_id %></td>
+        <td><%= puntaje.titulo %></td>
+        <td><%= puntaje.antig_tit %></td>
+        <td><%= puntaje.antig_doc %></td>
+        <td><%= puntaje.concepto %></td>
+        <td><%= puntaje.prom_tit %></td>
+        <td><%= puntaje.public %></td>
+        <td><%= puntaje.becas_otros %></td>
+        <td><%= puntaje.concursos %></td>
+        <td><%= puntaje.antec_doc %></td>
+        <td><%= puntaje.red_fed %></td>
+        <td><%= link_to 'Show', puntaje %></td>
+        <td><%= link_to 'Edit', edit_puntaje_path(puntaje) %></td>
+        <td><%= link_to 'Destroy', puntaje, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Puntaje', new_puntaje_path %>

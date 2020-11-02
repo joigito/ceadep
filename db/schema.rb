@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_29_225506) do
+ActiveRecord::Schema.define(version: 2020_11_02_175448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,4 +23,22 @@ ActiveRecord::Schema.define(version: 2020_10_29_225506) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "puntajes", force: :cascade do |t|
+    t.bigint "datosper_id", null: false
+    t.decimal "titulo"
+    t.decimal "antig_tit"
+    t.decimal "antig_doc"
+    t.decimal "concepto"
+    t.decimal "prom_tit"
+    t.decimal "public"
+    t.decimal "becas_otros"
+    t.decimal "concursos"
+    t.decimal "antec_doc"
+    t.decimal "red_fed"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["datosper_id"], name: "index_puntajes_on_datosper_id"
+  end
+
+  add_foreign_key "puntajes", "datospers"
 end
