@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @mat_cargo.nombre %>
+</p>
+
+<p>
+  <strong>Escuela:</strong>
+  <%= @mat_cargo.escuela %>
+</p>
+
+<%= link_to 'Edit', edit_mat_cargo_path(@mat_cargo) %> |
+<%= link_to 'Back', mat_cargos_path %>

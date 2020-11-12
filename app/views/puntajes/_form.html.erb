@@ -5,6 +5,10 @@
   
   <div class="form-inputs">
     <%= f.association :datosper, :label_method => :datos%>
+    <%= f.input :fecha_ins, label:'Fecha de inscripción',
+    start_year: Date.today.year - 70, end_year: Date.today.year %>
+    <%= f.association :mat_cargo, :label_method => :nombre%>
+    <%= f.input :periodo %>
     <%= f.input :titulo %>
     <%= f.input :antig_tit %>
     <%= f.input :antig_doc %>
@@ -15,6 +19,8 @@
     <%= f.input :concursos %>
     <%= f.input :antec_doc %>
     <%= f.input :red_fed %>
+
+    
   </div>
 
   <div class="form-actions">

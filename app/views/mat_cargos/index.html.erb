@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mat Cargos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Escuela</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mat_cargos.each do |mat_cargo| %>
+      <tr>
+        <td><%= mat_cargo.nombre %></td>
+        <td><%= mat_cargo.escuela %></td>
+        <td><%= link_to 'Show', mat_cargo %></td>
+        <td><%= link_to 'Edit', edit_mat_cargo_path(mat_cargo) %></td>
+        <td><%= link_to 'Destroy', mat_cargo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mat Cargo', new_mat_cargo_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_02_175448) do
+ActiveRecord::Schema.define(version: 2020_11_02_192827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 2020_11_02_175448) do
     t.integer "docum"
     t.text "apellido"
     t.text "nombres"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "mat_cargos", force: :cascade do |t|
+    t.string "nombre"
+    t.string "escuela"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -37,8 +44,14 @@ ActiveRecord::Schema.define(version: 2020_11_02_175448) do
     t.decimal "red_fed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "total"
+    t.datetime "fecha_ins"
+    t.string "periodo"
+    t.bigint "mat_cargo_id"
     t.index ["datosper_id"], name: "index_puntajes_on_datosper_id"
+    t.index ["mat_cargo_id"], name: "index_puntajes_on_mat_cargo_id"
   end
 
   add_foreign_key "puntajes", "datospers"
+  add_foreign_key "puntajes", "mat_cargos"
 end
